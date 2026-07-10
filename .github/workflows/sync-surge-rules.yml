@@ -1,0 +1,38 @@
+name: Sync Surge rule mirrors
+
+on:
+  schedule:
+    - cron: "17 3 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: sync-surge-rule-mirrors
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Download and validate upstream rules
+        id: sync
+        continue-on-error: true
+        run: python3 Surge/Rules/sync_rules.py
+
+      - name: Commit valid updates
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add Surge/Rules
+          if ! git diff --cached --quiet; then
+            git commit -m "chore: sync Surge rule mirrors"
+            git push
+          fi
+
+      - name: Report partial sync failure
+        if: steps.sync.outcome == 'failure'
+        run: exit 1
