@@ -1,0 +1,50 @@
+{
+  "icon_set": {
+    "upstream_base": "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/",
+    "mirror_base": "https://raw.githubusercontent.com/shaoyou11/Profiles/main/Surge/IconSet/Color/",
+    "files": [
+      "Apple.png",
+      "Auto.png",
+      "Available.png",
+      "Disney.png",
+      "Domestic.png",
+      "Final.png",
+      "Hong_Kong.png",
+      "Japan.png",
+      "LinkCube.png",
+      "Microsoft.png",
+      "Netflix.png",
+      "OneDrive.png",
+      "PayPal.png",
+      "Proxy.png",
+      "Server.png",
+      "Singapore.png",
+      "Siri.png",
+      "Speedtest.png",
+      "Taiwan.png",
+      "Telegram.png",
+      "TikTok.png",
+      "Twitter.png",
+      "United_States.png",
+      "WeChat.png",
+      "YouTube.png",
+      "bilibili.png"
+    ]
+  },
+  "geoip": [
+    {
+      "path": "GeoIP/Country.mmdb",
+      "url": "https://raw.githubusercontent.com/Hackl0us/GeoIP2-CN/release/Country.mmdb"
+    },
+    {
+      "path": "GeoIP/Country-Loyalsoldier.mmdb",
+      "url": "https://raw.githubusercontent.com/Loyalsoldier/geoip/release/Country.mmdb"
+    }
+  ],
+  "extra_rules": [
+    {
+      "path": "Rules/AI/ConnersHua-AI.list",
+      "url": "https://raw.githubusercontent.com/ConnersHua/RuleGo/refs/heads/master/Surge/Ruleset/Extra/AI.list"
+    }
+  ]
+}
