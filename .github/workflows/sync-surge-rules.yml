@@ -1,6 +1,9 @@
 name: Sync Surge rule mirrors
 
 on:
+  push:
+    paths:
+      - ".github/workflows/sync-surge-rules.yml"
   schedule:
     - cron: "17 3 * * *"
   workflow_dispatch:
@@ -23,16 +26,21 @@ jobs:
         continue-on-error: true
         run: python3 Surge/Rules/sync_rules.py
 
+      - name: Download and validate upstream assets
+        id: assets
+        continue-on-error: true
+        run: python3 Surge/sync_assets.py
+
       - name: Commit valid updates
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add Surge/Rules
+          git add Surge/Rules Surge/IconSet Surge/GeoIP Surge/assets-sources.json
           if ! git diff --cached --quiet; then
             git commit -m "chore: sync Surge rule mirrors"
             git push
           fi
 
       - name: Report partial sync failure
-        if: steps.sync.outcome == 'failure'
+        if: steps.sync.outcome == 'failure' || steps.assets.outcome == 'failure'
         run: exit 1
