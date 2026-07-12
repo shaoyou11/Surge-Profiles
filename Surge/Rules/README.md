@@ -9,4 +9,4 @@ This directory contains local mirrors of the remote rule files used by the Surge
 
 The Surge profile should reference only URLs under:
 
-`https://raw.githubusercontent.com/shaoyou11/Profiles/main/Surge/Rules/`
+`https://raw.githubusercontent.com/shaoyou11/Surge-Profiles/main/Surge/Rules/`
