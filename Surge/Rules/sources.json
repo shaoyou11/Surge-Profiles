@@ -6,6 +6,7 @@
   {"path": "AI/fmz200-AI.list", "url": "https://raw.githubusercontent.com/fmz200/wool_scripts/main/Loon/rule/AI.list"},
   {"path": "AI/skk-AI.conf", "url": "https://ruleset.skk.moe/List/non_ip/ai.conf"},
   {"path": "AI/Bing.list", "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Bing/Bing.list"},
+  {"path": "Google.list", "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Google/Google.list"},
   {"path": "Social/Weibo.list", "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Weibo/Weibo.list"},
   {"path": "Streaming/YouTube.list", "url": "https://raw.githubusercontent.com/ConnersHua/RuleGo/master/Surge/Ruleset/Extra/Streaming/Video/YouTube.list"},
   {"path": "Streaming/Disney.list", "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Disney/Disney.list"},
